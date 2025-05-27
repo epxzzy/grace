@@ -28,13 +28,13 @@ scene.background = new THREE.Color( 0xbfe3dd );
 scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
 const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
-camera.position.set( 5, 2, 8 );
+camera.position.set( 0, 0, 0 );
 
 const controls = new OrbitControls( camera, renderer.domElement );
 controls.target.set( 0, 0.5, 0 );
 controls.update();
-controls.enablePan = false;
-controls.enableDamping = false;
+controls.enablePan = true;
+controls.enableDamping = true;
 
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath( './gltf/' );
@@ -75,6 +75,7 @@ function animate() {
   const delta = clock.getDelta();
 
   //mixer.update( delta );
+  //camera.position.set(0,0, 5*sawtoothWave(delta, 5000, 20));
 
   controls.update();
 
@@ -83,3 +84,9 @@ function animate() {
   renderer.render( scene, camera );
 
 }
+
+function sawtoothWave(t, period, amplitude) {
+    return (2 * amplitude / Math.PI) * Math.atan(Math.tan(Math.PI * (t / period)));
+}
+
+
