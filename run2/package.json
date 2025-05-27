@@ -1,0 +1,18 @@
+{
+  "name": "run2",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx vite",
+    "build": "npx vite"
+
+  },
+  "author": "epxzzy",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "three": "^0.176.0",
+    "vite": "^6.3.5"
+  }
+}

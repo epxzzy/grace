@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "dev": "deno run -A --unstable --node-modules-dir npm:vite",
+    "build": "deno run -A --unstable --node-modules-dir npm:vite build",
+    "preview": "deno run -A --unstable --node-modules-dir npm:vite preview",
+    "serve": "deno run --allow-net --allow-read main.ts"
+  },
+  "imports": {
+    "three": "npm:three@0.150.1",
+    "vite": "npm:vite@^6.3.5",
+    "vue": "npm:vue@^3.5.15"
+  }
+}
